@@ -9,7 +9,7 @@ Based on the amazing work by [LinuxServer.io][linuxserverurl], and [TheHomeRepot
 
 [Hanwha Wisenet Wave][appurl] is a free to view [VMS](https://en.wikipedia.org/wiki/Video_management_system) that adds recording capability with the purchase of camera licenses.
 
-[![Hanwha Wisenet Wave](https://github.com/ndwalters/hanwha-wave/blob/master/hanwha-wisenet-wave.png)][appurl]
+[![Hanwha Wisenet Wave](https://github.com/ndwalters/hanwha-wave/blob/latest/hanwha-wisenet-wave.png)][appurl]
 
 ## Usage
 
