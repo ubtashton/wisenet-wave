@@ -15,14 +15,15 @@ Based on the amazing work by [LinuxServer.io][linuxserverurl], and [TheHomeRepot
 
 ```
 docker run -d \
---name=hanwha-wave \
---restart=unless-stopped \
---net=host \
--e PUID=<UID> -e PGID=<GID> \
--e TZ=<timezone> \
--v </path/to/config>:/config \
--v </path/to/recordings>:/archive \
-ndwalters/hanwha-wave
+  --name=hanwha-wave \
+  --restart=unless-stopped \
+  --net=host \
+  -e PUID=<UID> 
+  -e PGID=<GID> \
+  -e TZ=<timezone> \
+  -v </path/to/config>:/config \
+  -v </path/to/archive>:/archive \
+ndwalters/hanwha-wave:latest
 ```
 
 ## Parameters
