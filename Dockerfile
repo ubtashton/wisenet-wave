@@ -3,8 +3,8 @@ MAINTAINER Ryan Flagler
 
 # global environment settings
 ENV DEBIAN_FRONTEND="noninteractive"
-ENV COMPANY_NAME="networkoptix"
-ENV SOFTWARE_URL="https://updates.networkoptix.com/default/4.2.0.33117/linux/nxwitness-server-4.2.0.33117-linux64-patch.deb"
+ENV COMPANY_NAME="hanwha"
+ENV SOFTWARE_URL="https://www.hanwha.se/Program/wave-client-4.2.0.32841-linux64.deb"
 
 # pull installer
 RUN     mkdir -p /opt/deb && \
