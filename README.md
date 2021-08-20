@@ -1,30 +1,28 @@
 [linuxserverurl]: https://linuxserver.io
 [thehomerepoturl]: https://github.com/thehomerepot
-[appurl]: http://www.networkoptix.com/nxwitness/
-[hub]: https://hub.docker.com/r/thehomerepot/nxwitness/
+[appurl]: https://wavevms.com/
+[hub]: https://hub.docker.com/r/ndwalters/hanwha-wave/
 
-[![thehomerepot](https://github.com/thehomerepot/media/raw/master/thehomerepot_banner_medium.png)][thehomerepoturl]
+Based on the amazing work by [LinuxServer.io][linuxserverurl], and [TheHomeRepot][thehomerepoturl]. 
 
-Based on the amazing work by [LinuxServer.io][linuxserverurl], TheHomeRepot aims to provide additional quality, reliable containers. 
+# ndwalters/hanwha-wave
 
-# thehomerepot/nxwitness
+[Hanwha Wisenet Wave][appurl] is a free to view [VMS](https://en.wikipedia.org/wiki/Video_management_system) that adds recording capability with the purchase of camera licenses.
 
-[NX Witness VMS][appurl] is a free to view [VMS](https://en.wikipedia.org/wiki/Video_management_system) that adds recording capability with the purchase of camera licenses.
-
-[![NX Witness VMS](https://github.com/thehomerepot/media/raw/master/nxwitness-icon.png)][appurl]
+[![Hanwha Wisenet Wave](https://github.com/ndwalters/hanwha-wave/blob/master/hanwha-wisenet-wave.png)][appurl]
 
 ## Usage
 
 ```
 docker run -d \
---name=nxwitness \
+--name=hanwha-wave \
 --restart=unless-stopped \
 --net=host \
 -e PUID=<UID> -e PGID=<GID> \
 -e TZ=<timezone> \
 -v </path/to/config>:/config \
 -v </path/to/recordings>:/archive \
-thehomerepot/nxwitness
+ndwalters/hanwha-wave
 ```
 
 ## Parameters
@@ -35,7 +33,7 @@ So -p 8080:80 would expose port 80 from inside the container to be accessible fr
 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.
 
 
-* `--net=host` - Shares host networking with container, **required prior to version 3.1.x**.
+* `--net=host` - Shares host networking with container
 * `-v /config` - Configuration files
 * `-v /archive` - Recordings will be landed here.
 * `-e PGID=` for for GroupID - see below for explanation
@@ -55,7 +53,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 
 ## Setting up the application
 
-You will need to install and run the [NX Witness Desktop Client](https://my.networkoptix.com/) and connect to your docker host using port 7001. You will be prompted within the client to configure the new server instance.
+You will need to install and run the [Wave Desktop Client](https://wavevms.com/download/) and connect to your docker host using port 7001. You will be prompted within the client to configure the new server instance.
 
 ## Licensing
 
@@ -65,11 +63,10 @@ In order to record from your security cameras, you will need to purchase license
 
 ## Info
 
-* Shell access whilst the container is running: `docker exec -it nxwitness /bin/bash`
-* To monitor the logs of the container in realtime: `docker logs -f nxwitness`
+* Shell access whilst the container is running: `docker exec -it hanwha-wave /bin/bash`
+* To monitor the logs of the container in realtime: `docker logs -f hanwha-wave`
 
 
 ## Versions
 
-+ **2019.08.17:** Updated for v4 changes
-+ **2017.09.21:** Initial creation
++ **2021.08.20:** Initial creation
