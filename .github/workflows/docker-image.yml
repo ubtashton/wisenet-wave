@@ -20,7 +20,16 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag hanwha-wave:$(date +%s)
-    - name: Docker Push
-      run: docker push ndwalters/hanwha-wave
+#    - name: Build the Docker image
+#      run: docker build . --file Dockerfile --tag hanwha-wave:$(date +%s)
+#    - name: Docker Push
+#      run: docker push ndwalters/hanwha-wave
+      
+    - name: Build the tagged Docker image
+      run: docker build . --file Dockerfile --tag ndwalters/hanwha-wave:$(date +%s)
+    - name: Push the tagged Docker image
+      run: docker push ndwalters/hanwha-wave:${{steps.vars.outputs.tag}}
+    - name: Build the latest Docker image
+      run: docker build . --file Dockerfile --tag ndwalters/hanwha-wave:latest
+    - name: Push the latest Docker image
+      run: docker push ndwalters/hanwha-wave:latest
