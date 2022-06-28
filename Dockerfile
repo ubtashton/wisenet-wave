@@ -34,3 +34,4 @@ COPY root/ /
 # ports and volumes
 EXPOSE 7001
 VOLUME /config /archive
+
