@@ -4,7 +4,7 @@ MAINTAINER Ryan Flagler
 # global environment settings
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV COMPANY_NAME="hanwha"
-ENV SOFTWARE_URL="https://updates.wavevms.com/hanwha/32841/linux/wave-server-4.2.0.32841-linux64.deb"
+ENV SOFTWARE_URL="https://updates.wavevms.com/hanwha/5.0.0.35270/linux/wave-server-5.0.0.35270-linux_x64.deb"
 
 # pull installer
 RUN     mkdir -p /opt/deb && \
